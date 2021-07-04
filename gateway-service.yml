@@ -1,5 +1,5 @@
 server:
-  port: 6969
+  port: 1821
 
 eureka:
   client:
@@ -13,19 +13,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: geographics-service
-          uri: lb://geographics-service
-          predicates:
-            - Path=/geographics/**
-        - id: security-service
-          uri: lb://security-service
+        - id: plantilla-service
+          uri: lb://plantilla-service
           predicates:
             - Path=/security/**
-        - id: subnpay-service
-          uri: lb://subnpay-service
-          predicates:
-            - Path=/subnpay/**
-        - id: business-service
-          uri: lb://business-service
-          predicates:
-            - Path=/business/**
